@@ -18,8 +18,6 @@ public class ModeloPasarela extends Model {
 
         super(nombre, edad, altura, nacionalidad);
 
-        this.talla = talla;
-
         if (altura >= 1.75) {
             aptaPasarela = true;
         } else {

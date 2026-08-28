@@ -58,7 +58,9 @@ public class Main {
             System.out.println("1. Registrar modelo");
             System.out.println("2. Mostrar modelos");
             System.out.println("3. Mostrar eventos");
-            System.out.println("4. Salir");
+            System.out.println("4. Buscar modelo por nombre");
+            System.out.println("5. Mostrar reporte estadistico");
+            System.out.println("6. Salir");
             System.out.print("Opcion: ");
 
             opcion = sc.nextInt();
@@ -229,17 +231,22 @@ public class Main {
 
                 case 4:
 
-                    System.out.println("Programa finalizado.");
-
+                    System.out.println("\nIngrese el nombre de la modelo a buscar: ");
+                    String nombreBuscar = sc.nextLine();
+                    agencia.buscarModeloPorNombre(nombreBuscar);
                     break;
-
+                case 5:
+                    agencia.mostrarEstadisticas();
+                    break;
+                case 6:
+                    System.out.println("Programa finalizado.");
+                    break;
                 default:
 
                     System.out.println("Opcion incorrecta.");
             }
 
-        } while (opcion != 4);
-
+        } while (opcion != 6);
         sc.close();
     }
 }
